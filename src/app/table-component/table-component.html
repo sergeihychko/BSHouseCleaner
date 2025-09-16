@@ -1,0 +1,21 @@
+<p-table [value]="this.tableservice.skeets()"
+[tableStyle]="{'min-width' : '100rem',
+'max-width' : '700rem'}">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th style="width:500px">Text</th>
+      <th>Likes</th>
+      <th>Time</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-skeet>
+    <tr>
+      <td>{{skeet.id}}</td>
+      <td style="word-break: break-word">{{skeet.txt}}</td>
+      <td>{{skeet.likes | number}}</td>
+      <td>{{skeet.time}}</td>
+    </tr>
+  </ng-template>
+
+</p-table>
