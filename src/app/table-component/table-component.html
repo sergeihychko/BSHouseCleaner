@@ -3,6 +3,7 @@
 'max-width' : '700rem'}">
   <ng-template pTemplate="header">
     <tr>
+      <th></th>
       <th>ID</th>
       <th style="width:500px">Text</th>
       <th>Likes</th>
@@ -11,6 +12,9 @@
   </ng-template>
   <ng-template pTemplate="body" let-skeet>
     <tr>
+      <td>
+        <<button (click)="deleteSkeet(skeet.uri)" class="btn">Del skeet</button>
+      </td>
       <td>{{skeet.id}}</td>
       <td style="word-break: break-word">{{skeet.txt}}</td>
       <td>{{skeet.likes | number}}</td>

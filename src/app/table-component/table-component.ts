@@ -24,4 +24,12 @@ export class TableComponent {
     this.tableservice.skeets
     console.log(this.tableservice.skeets)
   }
+
+  deleteSkeet(uri: string) {
+    this.tableservice.deleteSkeet(uri).subscribe((results) => {
+      console.log('Data is received - Result - ', results);
+    })
+  }
+
+
 }

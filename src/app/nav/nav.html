@@ -44,6 +44,19 @@
       <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
     </defs>
   </svg>
-  <h1>Hello, {{ title() }}</h1>
-  <p>Congratulations! Your app is running. 🎉</p>
+  <h1>{{ title() }}</h1>
+  <p>
+    <table>
+      <tr>
+        <td>
+          <button type="button" class="button">Recent</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" class="button">No Action</button>
+        </td>
+      </tr>
+    </table>
+
 </div>
