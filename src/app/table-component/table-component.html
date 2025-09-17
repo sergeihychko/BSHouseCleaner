@@ -13,7 +13,7 @@
   <ng-template pTemplate="body" let-skeet>
     <tr>
       <td>
-        <<button (click)="deleteSkeet(skeet.uri)" class="btn">Del skeet</button>
+        <button (click)="deleteSkeet(skeet.uri)" class="btn btn-danger">Del skeet</button>
       </td>
       <td>{{skeet.id}}</td>
       <td style="word-break: break-word">{{skeet.txt}}</td>
