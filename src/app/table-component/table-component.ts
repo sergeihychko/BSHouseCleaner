@@ -18,7 +18,6 @@ import {SkeetService} from '../skeet-service';
 export class TableComponent {
 
   skeets!: Skeets[]
-
   tableservice = inject(TableService);
   skeetservice = inject(SkeetService);
 
