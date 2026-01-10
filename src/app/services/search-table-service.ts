@@ -1,7 +1,7 @@
 import {computed, inject, Injectable, InputSignal, Signal} from '@angular/core';
-import {environment} from '../environments/environment.development';
+import {environment} from '../../environments/environment.development';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Skeets} from './interface/api-interface';
+import {Skeets} from '../interface/api-interface';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {from, Observable} from 'rxjs';
 import { DatePipe } from '@angular/common';

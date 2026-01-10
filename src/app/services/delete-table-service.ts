@@ -1,17 +1,16 @@
 import {computed, inject, Injectable} from '@angular/core';
-import {environment} from '../environments/environment.development';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {environment} from '../../environments/environment.development';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Skeets} from './interface/api-interface';
+import {Skeets} from '../interface/api-interface';
 import {toSignal} from '@angular/core/rxjs-interop';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TableService {
-  restApi = computed(() => `${environment.API_URL}/skeet/data`);
+export class DeleteTableService {
+  restApi = computed(() => `${environment.API_URL}/skeet/inactive`);
   private http = inject(HttpClient);
-
   private skeets$: Observable<Skeets[]> =
     this.getSkeets();
 
@@ -22,5 +21,4 @@ export class TableService {
   getSkeets(): Observable<Skeets[]>{
     return this.http.get<Skeets[]>(this.restApi())
   }
-
 }

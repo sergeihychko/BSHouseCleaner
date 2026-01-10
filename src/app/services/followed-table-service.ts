@@ -1,9 +1,9 @@
 import {computed, inject, Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Followers, Skeets} from './interface/api-interface';
+import {Followers, Skeets} from '../interface/api-interface';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {toSignal} from '@angular/core/rxjs-interop';
-import {environment} from '../environments/environment.development';
+import {environment} from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'

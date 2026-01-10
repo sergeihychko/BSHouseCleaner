@@ -2,7 +2,7 @@ import {Component, inject} from '@angular/core';
 import {PrimeTemplate} from 'primeng/api';
 import {TableModule} from 'primeng/table';
 import {Followers} from '../interface/api-interface';
-import {FollowedTableService} from '../followed-table-service'
+import {FollowedTableService} from '../services/followed-table-service'
 
 @Component({
   selector: 'app-followed-table-component',

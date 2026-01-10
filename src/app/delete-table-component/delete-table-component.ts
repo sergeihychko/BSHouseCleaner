@@ -3,7 +3,7 @@ import {DecimalPipe} from "@angular/common";
 import {PrimeTemplate} from "primeng/api";
 import {TableModule} from "primeng/table";
 import {Skeets} from '../interface/api-interface';
-import {DeleteTableService} from '../delete-table-service';
+import {DeleteTableService} from '../services/delete-table-service';
 
 @Component({
   selector: 'app-delete-table-component',

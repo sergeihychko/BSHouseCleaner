@@ -3,9 +3,9 @@ import {DecimalPipe} from '@angular/common';
 import {PrimeTemplate} from 'primeng/api';
 import {TableModule} from 'primeng/table';
 import {Skeets} from '../interface/api-interface';
-import {TableService} from '../table-service';
-import {SkeetService} from '../skeet-service';
-import {FeedTableService} from '../feed-table-service';
+import {TableService} from '../services/table-service';
+import {SkeetService} from '../services/skeet-service';
+import {FeedTableService} from '../services/feed-table-service';
 import {MatToolbar} from '@angular/material/toolbar';
 import {FeedSearchBar} from '../feed-search-bar/feed-search-bar';
 
@@ -30,5 +30,13 @@ export class FeedTableComponent {
     this.feedtableservice.skeets
     console.log(this.feedtableservice.skeets)
   }
+
+  // applyFilter(searchText: string) {
+  //   if (!searchText) return
+  //   searchText = searchText.toLowerCase();
+  //   this.filteredSkeets = this.skeets.filter( skeets => {
+  //     return skeets.text.toLowerCase().includes(searchText);
+  //   });
+  // }
 
 }
