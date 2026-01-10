@@ -4,11 +4,17 @@ import {DeleteTableComponent} from './delete-table-component/delete-table-compon
 import {SearchTableComponent} from './search-table-component/search-table-component';
 import {FollowingTableComponent} from './following-table-component/following-table-component';
 import {FollowedTableComponent} from './followed-table-component/followed-table-component';
+import {FeedTableComponent} from './feed-table-component/feed-table-component';
 
 export const routes: Routes = [
   {
     path: 'recent',
     component : TableComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'feed',
+    component : FeedTableComponent,
     pathMatch: 'full',
   },
   {
