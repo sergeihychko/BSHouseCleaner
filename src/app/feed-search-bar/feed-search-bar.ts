@@ -16,6 +16,7 @@ export class FeedSearchBar {
 
   searchBarService = inject(SearchBarService)
   overlayOpen = this.searchBarService.overlayOpen;
+  searchTerm = this.searchBarService.searchTerm;
 
   search(searchTerm: string) {
     if (!searchTerm) return;

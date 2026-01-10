@@ -19,4 +19,8 @@ export class FeedSearchOverlay {
   deleteRecentSearches = (searchTerm: string) => {
     this.searchBarService.deleteRecentSearches(searchTerm);
   }
+
+  performSearch(searchTerm: string) {
+    this.searchBarService.search(searchTerm);
+  }
 }
