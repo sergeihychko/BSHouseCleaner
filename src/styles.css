@@ -4,4 +4,12 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  --mat-toolbar-container-background-color: ghostwhite;
+}
+
+.mat-typography h3 {
+  margin: 0;
+}

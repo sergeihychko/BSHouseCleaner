@@ -1,0 +1,35 @@
+<p>Followed Table!</p>
+
+<p-table [value]="this.followedTableService.followed()"
+         [tableStyle]="{'min-width' : '100rem',
+'max-width' : '700rem'}" [@if]="this.followed !== null">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th style="max-width:150px">Handle</th>
+      <th>Avatar</th>
+      <th style="max-width: 300px">Description</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-follower>
+    <tr>
+      <td>{{follower.name}}</td>
+      <td style="word-break: break-word">{{follower.handle}}</td>
+      <td><img [src]="follower.avatar" width="20" height="20"/></td>
+      <td style="word-break: break-word">{{follower.description}}</td>
+    </tr>
+  </ng-template>
+</p-table>
+<hr/>
+<div [@if]="this.followed === null">You have no followers! Big Sad.</div>
+
+<p>
+<table>
+  <tr>
+    <td>
+      <button type="button" class="button">Delete All</button>
+    </td>
+  </tr>
+</table>
+
+

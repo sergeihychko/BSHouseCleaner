@@ -1,0 +1,52 @@
+<p>Advanced Search Page:</p>
+<table width="400">
+  <tr>
+    <td>
+      <p>Please select a beginning date to search.</p>
+      <p-datepicker [(ngModel)]="bdate" [showIcon]="true" inputId="buttondisplay" [showOnFocus]="false" dateFormat="dd.mm.yy" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Please select an ending date to search.</p>
+      <p-datepicker [(ngModel)]="edate" [showIcon]="true" inputId="buttondisplay" [showOnFocus]="false" dateFormat="dd.mm.yy" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Begin search with the button.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="button" (click)="onSubmit()" class="btn btn-success">Search</button>
+    </td>
+  </tr>
+</table>
+
+<ng-container >
+  <p-table [value]="(this.skeets$ | async)!"
+           [tableStyle]="{'min-width' : '100rem',
+  'max-width' : '500rem'}">
+    <ng-template pTemplate="header">
+      <tr>
+        <th></th>
+        <th>ID</th>
+        <th style="width:500px">Text</th>
+        <th>Likes</th>
+        <th>Time</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-skeet>
+      <tr>
+        <td>
+          <button (click)="deleteSkeet(skeet.uri)" class="btn btn-danger">Del skeet</button>
+        </td>
+        <td>{{skeet.id}}</td>
+        <td style="word-break: break-word">{{skeet.txt}}</td>
+        <td>{{skeet.likes | number}}</td>
+        <td>{{skeet.time}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</ng-container>
