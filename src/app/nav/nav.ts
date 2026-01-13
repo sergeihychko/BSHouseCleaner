@@ -4,13 +4,16 @@ import {TableModule} from 'primeng/table';
 import {NzMenuDirective, NzMenuItemComponent} from 'ng-zorro-antd/menu';
 import {Observable} from 'rxjs';
 import {Notificaion} from '../interface/api-interface';
+import {AsyncPipe, DecimalPipe} from '@angular/common';
 
 @Component({
   selector: 'app-nav',
   imports: [
     TableModule,
     NzMenuItemComponent,
-    NzMenuDirective
+    NzMenuDirective,
+    AsyncPipe,
+    DecimalPipe
   ],
   templateUrl: './nav.html',
   styleUrl: './nav.css'
@@ -18,7 +21,6 @@ import {Notificaion} from '../interface/api-interface';
 export class Nav {
   notifications!: Observable<Notificaion[]>;
   notificationsService = inject(NotificationsService);
-  notificationCount: number = 0;
 
   constructor() {
     console.log("MyService initializing");
@@ -30,8 +32,8 @@ export class Nav {
   }
 
   getNotifications(){
+    this.notifications = this.notificationsService.getNotifications();
     console.log('notifications : ', this.notifications);
-    this.notifications = this.notificationsService.getNotificaionts();
   }
 
 }

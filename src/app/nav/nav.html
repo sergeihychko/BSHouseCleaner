@@ -24,10 +24,27 @@
       <li nz-menu-item  class="nav-item" [nzMatchRouter]="true" routerLinkActive="active">
         <a href="/future" class="list-group-item list-group-item-action disabled">Future Function</a>
       </li>
-      <li nz-menu-item class="nav-item" [nzMatchRouter]="true" routerLinkActive="active">
-        <label class="list-group-item list-group-item-action" id="notification">Notifications:
+      <li nz-menu-item class="nav-item">
+        <label class="list-group-item list-group-item-action" id="notification">Notifications:{{this.notificationsService.notifications().length | number}}
         </label>
-        <button id="notifications_button" [textContent]="this.notificationCount"></button>
+<!--        <button id="notifications_button" [textContent]="this.notificationCount"></button>-->
+      </li>
+      <li nz-menu-item class="nav-item">
+          <p-table [value]="(this.notifications | async)!"
+                   [tableStyle]="{'min-width' : '0rem', 'max-width' : '40rem'}"
+                   [@if]="this.notificationsService.notifications().length > 0">
+<!--            <ng-template pTemplate="header">-->
+<!--              <tr>-->
+<!--                <th>Type</th>-->
+<!--              </tr>-->
+<!--            </ng-template>-->
+            <ng-template pTemplate="body" let-notification>
+              <tr>
+                <td >{{notification.description}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+          <p-table [@if]="this.notificationsService.notifications().length === 0">No Notifications</p-table>
       </li>
     </ul>
   </div>
