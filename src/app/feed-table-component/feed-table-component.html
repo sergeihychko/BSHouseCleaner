@@ -8,7 +8,6 @@
   <ng-template pTemplate="header">
     <tr>
       <th></th>
-      <th>ID</th>
       <th>Author</th>
       <th style="width:500px">Text</th>
       <th>Likes</th>
@@ -18,8 +17,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-skeet>
     <tr>
-      <td>{{skeet.id}}</td>
-      <td><img class="fit-picture" src="{{skeet.author}}"/></td>
+      <td><img class="fit-picture" src="{{skeet.author}}" alt=""/></td>
       <td style="word-break: break-word">{{skeet.txt}}</td>
       <td style="text-align: right">{{skeet.likes | number}}</td>
       <td  style="text-align: right">{{skeet.replies | number}}</td>
