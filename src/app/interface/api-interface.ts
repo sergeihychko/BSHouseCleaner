@@ -5,7 +5,7 @@ export interface Skeets{
   time: string;
   text: string;
   uri: string;
-  reply: string;
+  replies: string;
 }
 
 export interface Followers{

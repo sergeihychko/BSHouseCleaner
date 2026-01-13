@@ -12,7 +12,7 @@
       <th>Author</th>
       <th style="width:500px">Text</th>
       <th>Likes</th>
-      <!--      <th>Replies</th>-->
+      <th>Replies</th>
       <th>Time</th>
     </tr>
   </ng-template>
@@ -22,7 +22,7 @@
       <td><img class="fit-picture" src="{{skeet.author}}"/></td>
       <td style="word-break: break-word">{{skeet.txt}}</td>
       <td style="text-align: right">{{skeet.likes | number}}</td>
-      <!--      <td>{{skeet.reply | number}}</td>-->
+      <td  style="text-align: right">{{skeet.replies | number}}</td>
       <td style="text-align: right">{{skeet.time}}</td>
     </tr>
   </ng-template>

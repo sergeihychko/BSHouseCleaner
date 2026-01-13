@@ -7,6 +7,7 @@
     <mat-icon>search</mat-icon>
   </button>
   <input #searchInput
+         id="search-term"
          [value]="searchTerm()"
          placeholder="Search my timeline"
          (click)="overlayOpen.set(true)"

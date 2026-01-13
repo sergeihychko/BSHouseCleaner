@@ -34,6 +34,7 @@
         <th>ID</th>
         <th style="width:500px">Text</th>
         <th>Likes</th>
+        <th>Replies</th>
         <th>Time</th>
       </tr>
     </ng-template>
@@ -45,6 +46,7 @@
         <td>{{skeet.id}}</td>
         <td style="word-break: break-word">{{skeet.txt}}</td>
         <td>{{skeet.likes | number}}</td>
+        <td>{{skeet.replies | number}}</td>
         <td>{{skeet.time}}</td>
       </tr>
     </ng-template>
