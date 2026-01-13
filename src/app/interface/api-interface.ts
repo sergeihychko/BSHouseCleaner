@@ -14,3 +14,8 @@ export interface Followers{
   handle: string;
   name: string;
 }
+
+export interface Notificaion{
+  author: string;
+  description: string;
+}
