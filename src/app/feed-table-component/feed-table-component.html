@@ -17,7 +17,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-skeet>
     <tr>
-      <td><img class="fit-picture" src="{{skeet.author}}" alt=""/></td>
+      <td><div matTooltip="{{skeet.author}}" matTooltipPosition="below"><img class="fit-picture" src="{{skeet.avatar}}" alt=""/></div></td>
       <td style="word-break: break-word">{{skeet.txt}}</td>
       <td style="text-align: right">{{skeet.likes | number}}</td>
       <td  style="text-align: right">{{skeet.replies | number}}</td>

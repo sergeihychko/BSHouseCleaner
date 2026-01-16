@@ -1,6 +1,8 @@
 
 export interface Skeets{
   id: string;
+  author: string;
+  avatar: string;
   likes: number;
   time: string;
   text: string;

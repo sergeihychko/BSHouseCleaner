@@ -8,6 +8,8 @@ import {SkeetService} from '../services/skeet-service';
 import {FeedTableService} from '../services/feed-table-service';
 import {MatToolbar} from '@angular/material/toolbar';
 import {FeedSearchBar} from '../feed-search-bar/feed-search-bar';
+import {MatTooltip} from '@angular/material/tooltip';
+import {STANDARD_DROPDOWN_BELOW_POSITIONS} from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-feed-table-component',
@@ -16,7 +18,8 @@ import {FeedSearchBar} from '../feed-search-bar/feed-search-bar';
     PrimeTemplate,
     TableModule,
     MatToolbar,
-    FeedSearchBar
+    FeedSearchBar,
+    MatTooltip
   ],
   templateUrl: './feed-table-component.html',
   styleUrl: './feed-table-component.css',
@@ -39,4 +42,5 @@ export class FeedTableComponent {
   //   });
   // }
 
+  protected readonly STANDARD_DROPDOWN_BELOW_POSITIONS = STANDARD_DROPDOWN_BELOW_POSITIONS;
 }

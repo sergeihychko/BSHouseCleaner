@@ -1,3 +1,9 @@
 .fit-picture {
   width: 40px;
 }
+.example-tooltip-host {
+  display: inline-flex;
+  align-items: center;
+  margin: 50px;
+}
+
