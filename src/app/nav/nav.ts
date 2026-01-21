@@ -5,6 +5,8 @@ import {NzMenuDirective, NzMenuItemComponent} from 'ng-zorro-antd/menu';
 import {Observable} from 'rxjs';
 import {Notificaion} from '../interface/api-interface';
 import {AsyncPipe, DecimalPipe} from '@angular/common';
+import {FeedNotificationDetail} from '../feed-notification-detail/feed-notification-detail';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-nav',
@@ -22,9 +24,17 @@ export class Nav {
   notifications!: Observable<Notificaion[]>;
   notificationsService = inject(NotificationsService);
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     console.log("MyService initializing");
     this.getNotifications()
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(FeedNotificationDetail);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   title() {
