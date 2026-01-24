@@ -1,11 +1,10 @@
-import {Component, inject} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
 import {Notificaion} from '../interface/api-interface';
 import {NotificationsService} from '../services/notifications';
 import {PrimeTemplate} from 'primeng/api';
 import {TableModule} from 'primeng/table';
-import {MatDialog, MatDialogActions, MatDialogClose, MatDialogContent} from '@angular/material/dialog';
-import {AsyncPipe} from '@angular/common';
+import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from '@angular/material/dialog';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-feed-notification-detail',
@@ -14,22 +13,27 @@ import {AsyncPipe} from '@angular/common';
     TableModule,
     MatDialogActions,
     MatDialogContent,
-    AsyncPipe,
-    MatDialogClose
+    MatDialogClose,
+    MatDialogTitle,
+    MatButton
   ],
   templateUrl: './feed-notification-detail.html',
   styleUrl: './feed-notification-detail.css',
 })
-export class FeedNotificationDetail {
-  notifications!: Observable<Notificaion[]>;
-  notificationsService = inject(NotificationsService);
+export class FeedNotificationDetail implements OnInit{
+  notifications!: Notificaion[];
 
-  constructor() {
-    this.getNotifications()
+  constructor(private notificationsService: NotificationsService) {
   }
 
-  getNotifications(){
-    this.notifications = this.notificationsService.getNotifications();
+  ngOnInit() {
+    this.loadNotifications()
+  }
+
+  loadNotifications(){
+    this.notificationsService.getNotifications().subscribe(notifications =>{
+      this.notifications = notifications;
+    });
     console.log('notifications : ', this.notifications);
   }
 

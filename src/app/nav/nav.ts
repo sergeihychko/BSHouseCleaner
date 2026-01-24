@@ -25,7 +25,6 @@ export class Nav {
   notificationsService = inject(NotificationsService);
 
   constructor(public dialog: MatDialog) {
-    console.log("MyService initializing");
     this.getNotifications()
   }
 

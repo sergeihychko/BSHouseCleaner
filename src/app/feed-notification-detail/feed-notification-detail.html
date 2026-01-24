@@ -1,9 +1,9 @@
 <h2 mat-dialog-title>Notifications</h2>
 <mat-dialog-content class="mat-typography">
   <h3>Notifications detail</h3>
-  <p-table [value]="(this.notificationsService.getNotifications() | async)!"
-           [tableStyle]="{'min-width' : '100rem',
-'max-width' : '300rem'}" [@if]="this.notifications !== null">
+  <p-table [value]="(this.notifications)"
+           [tableStyle]="{'min-width' : '10rem',
+'max-width' : '100rem'}" [@if]="this.notifications.length > 0">
     <ng-template pTemplate="header">
       <tr>
         <th>User Name</th>
@@ -12,13 +12,13 @@
     </ng-template>
     <ng-template pTemplate="body" let-notification>
       <tr>
-        <td>{{notification.name}}</td>
-        <td style="word-break: break-word">{{notification.handle}}</td>
+        <td>{{notification.author}}</td>
+        <td style="word-break: break-word">{{notification.description}}</td>
       </tr>
     </ng-template>
   </p-table>
   <hr/>
-  <div [@if]="this.notifications === null">There are zero new notifications.</div>
+  <div [@if]="this.notifications.length === 0">There are zero new notifications.</div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
