@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, NgModule} from '@angular/core';
 import {NotificationsService} from '../services/notifications';
 import {TableModule} from 'primeng/table';
 import {NzMenuDirective, NzMenuItemComponent} from 'ng-zorro-antd/menu';
@@ -7,6 +7,8 @@ import {Notificaion} from '../interface/api-interface';
 import {AsyncPipe, DecimalPipe} from '@angular/common';
 import {FeedNotificationDetail} from '../feed-notification-detail/feed-notification-detail';
 import {MatDialog} from '@angular/material/dialog';
+import {RouterLinkActive} from '@angular/router';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-nav',
@@ -15,11 +17,14 @@ import {MatDialog} from '@angular/material/dialog';
     NzMenuItemComponent,
     NzMenuDirective,
     AsyncPipe,
-    DecimalPipe
+    DecimalPipe,
+    RouterLinkActive,
+    MatButton
   ],
   templateUrl: './nav.html',
   styleUrl: './nav.css'
 })
+
 export class Nav {
   notifications!: Observable<Notificaion[]>;
   notificationsService = inject(NotificationsService);

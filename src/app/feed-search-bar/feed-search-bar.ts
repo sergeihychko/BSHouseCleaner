@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject, NgModule} from '@angular/core';
 import {MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
 import {OverlayModule} from '@angular/cdk/overlay';
@@ -12,6 +12,7 @@ import {NgClass} from '@angular/common';
   templateUrl: './feed-search-bar.html',
   styleUrl: './feed-search-bar.css',
 })
+
 export class FeedSearchBar {
 
   searchBarService = inject(SearchBarService)
