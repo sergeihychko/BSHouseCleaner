@@ -1,0 +1,23 @@
+.text-header {
+  text-align:center;
+  width:700px;
+}
+.likes-header {
+  text-align:center;
+  width:50px;
+}
+.replies-header {
+  text-align:center;
+  width:70px;
+}
+.reposts-header {
+  text-align:center;
+  width:70px;
+}
+.time-header {
+  text-align:right;
+}
+.text-body {
+  text-align:left;
+  width:500px;
+}

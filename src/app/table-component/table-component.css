@@ -19,3 +19,33 @@ table {
   width:60%;
   max-width:60%;
 }
+.delete-header {
+  text-align:left;
+  width:115px;
+}
+.id-header {
+  text-align:center;
+  width:50px;
+}
+.text-header {
+  text-align:center;
+  width:700px;
+}
+.likes-header {
+  text-align:center;
+  width:50px;
+}
+.replies-header {
+  text-align:center;
+  width:70px;
+}
+.reposts-header {
+  text-align:center;
+  width:70px;
+}
+.time-header {
+  text-align:right;
+}
+.my-center {
+  text-align:center;
+}

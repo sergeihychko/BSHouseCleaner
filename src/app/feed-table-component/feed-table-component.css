@@ -6,4 +6,27 @@
   align-items: center;
   margin: 50px;
 }
+.author-header {
+  text-align:left;
+  width:40px;
+}
+.text-header {
+  text-align:center;
+  width:700px;
+}
+.likes-header {
+  text-align:center;
+  width:50px;
+}
+.replies-header {
+  text-align:center;
+  width:70px;
+}
+.reposts-header {
+  text-align:center;
+  width:70px;
+}
+.time-header {
+  text-align:right;
+}
 

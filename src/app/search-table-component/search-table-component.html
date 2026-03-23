@@ -27,15 +27,16 @@
 <ng-container >
   <p-table [value]="(this.skeets$ | async)!"
            [tableStyle]="{'min-width' : '100rem',
-  'max-width' : '500rem'}">
+  'max-width' : '1000rem'}">
     <ng-template pTemplate="header">
       <tr>
         <th></th>
         <th>ID</th>
-        <th style="width:500px">Text</th>
-        <th>Likes</th>
-        <th>Replies</th>
-        <th>Time</th>
+        <th class="text-header">Text</th>
+        <th class="likes-header">Likes</th>
+        <th class="replies-header">Replies</th>
+        <th class="reposts-header">Reposts</th>
+        <th class="time-header">Time</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-skeet>
@@ -44,9 +45,10 @@
           <button (click)="deleteSkeet(skeet.uri)" class="btn btn-danger">Del skeet</button>
         </td>
         <td>{{skeet.id}}</td>
-        <td style="word-break: break-word">{{skeet.txt}}</td>
-        <td>{{skeet.likes | number}}</td>
-        <td>{{skeet.replies | number}}</td>
+        <td>{{skeet.txt}}</td>
+        <td style="text-align: right">{{skeet.likes | number}}</td>
+        <td style="text-align: right">{{skeet.replies | number}}</td>
+        <td style="text-align: right">{{skeet.reposts | number}}</td>
         <td>{{skeet.time}}</td>
       </tr>
     </ng-template>

@@ -3,12 +3,13 @@
 'max-width' : '700rem'}">
   <ng-template pTemplate="header">
     <tr>
-      <th></th>
-      <th>ID</th>
-      <th style="width:500px">Text</th>
-      <th>Likes</th>
-<!--      <th>Replies</th>-->
-      <th>Time</th>
+      <th class="delete-header"></th>
+      <th class="id-header">ID</th>
+      <th class="text-header">Text</th>
+      <th class="likes-header">Likes</th>
+      <th class="replies-header">Replies</th>
+      <th class="reposts-header">Reposts</th>
+      <th class="time-header">Time</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-skeet>
@@ -16,10 +17,11 @@
       <td>
         <button (click)="deleteSkeet(skeet.uri)" class="btn btn-danger">Del skeet</button>
       </td>
-      <td>{{skeet.id}}</td>
-      <td style="word-break: break-word">{{skeet.txt}}</td>
-      <td>{{skeet.likes | number}}</td>
-<!--      <td>{{skeet.reply | number}}</td>-->
+      <td class="my-center">{{skeet.id}}</td>
+      <td>{{skeet.txt}}</td>
+      <td class="my-center">{{skeet.likes | number}}</td>
+      <td class="my-center">{{skeet.replies | number}}</td>
+      <td class="my-center">{{skeet.reposts | number}}</td>
       <td>{{skeet.time}}</td>
     </tr>
   </ng-template>

@@ -8,6 +8,7 @@ export interface Skeets{
   text: string;
   uri: string;
   replies: string;
+  reposts: string;
 }
 
 export interface Followers{
