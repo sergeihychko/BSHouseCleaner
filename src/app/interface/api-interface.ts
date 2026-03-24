@@ -22,3 +22,8 @@ export interface Notificaion{
   author: string;
   description: string;
 }
+
+export interface Trend{
+  topic: string;
+  description: string;
+}

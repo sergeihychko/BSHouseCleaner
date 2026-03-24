@@ -1,0 +1,20 @@
+<p>Trending Topics</p>
+
+<ng-container >
+  <p-table [value]="this.TrendsService.trends()"
+           [tableStyle]="{'min-width' : '50rem',
+  'max-width' : '400rem'}" [@if]="this.trends !== null">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="max-width:100px">Name</th>
+        <th style="max-width:300px">Handle</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-trend>
+      <tr>
+        <td>{{trend.topic}}</td>
+        <td>{{trend.description}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</ng-container >

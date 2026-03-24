@@ -5,6 +5,7 @@ import {SearchTableComponent} from './search-table-component/search-table-compon
 import {FollowingTableComponent} from './following-table-component/following-table-component';
 import {FollowedTableComponent} from './followed-table-component/followed-table-component';
 import {FeedTableComponent} from './feed-table-component/feed-table-component';
+import {Trends} from './trends/trends';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,11 @@ export const routes: Routes = [
   {
     path: 'followed',
     component: FollowedTableComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'trends',
+    component: Trends,
     pathMatch: 'full',
   },
   {
