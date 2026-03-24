@@ -26,4 +26,7 @@ export interface Notificaion{
 export interface Trend{
   topic: string;
   description: string;
+  count: string;
+  category: string;
+  link: string;
 }
