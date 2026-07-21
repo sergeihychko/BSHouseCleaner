@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <app-feed-search-bar/>
+</mat-toolbar>
+<p-table [value]="this.feedtableservice.skeets()"
+         [tableStyle]="{'min-width' : '100rem',
+'max-width' : '1100rem'}">
+  <ng-template pTemplate="header">
+    <tr>
+      <th class="author-header">Author</th>
+      <th class="text-header">Text</th>
+      <th class="likes-header">Likes</th>
+      <th class="replies-header">Replies</th>
+      <th class="reposts-header">Reposts</th>
+      <th class="time-header">Time</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-skeet>
+    <tr>
+      <td style="text-align: left"><div matTooltip="{{skeet.author}}" matTooltipPosition="below"><img class="fit-picture" src="{{skeet.avatar}}" alt=""/></div></td>
+      <td>{{skeet.txt}}</td>
+      <td style="text-align: right">{{skeet.likes | number}}</td>
+      <td  style="text-align: right">{{skeet.replies | number}}</td>
+      <td  style="text-align: right">{{skeet.reposts | number}}</td>
+      <td style="text-align: right">{{skeet.time}}</td>
+    </tr>
+  </ng-template>
+
+</p-table>
